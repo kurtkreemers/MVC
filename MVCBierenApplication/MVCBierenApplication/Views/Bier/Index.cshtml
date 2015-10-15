@@ -1,0 +1,15 @@
+﻿@using MVCBierenApplication.Models
+@model  List<Bier>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<ul>
+    @foreach(var bier in Model)
+    {
+        <li>ID = @bier.ID Naam = @bier.Naam heeft @bier.Alcohol percentage</li>
+    }
+</ul>
+
