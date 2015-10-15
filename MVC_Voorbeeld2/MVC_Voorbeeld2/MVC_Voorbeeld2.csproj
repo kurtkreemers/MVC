@@ -159,6 +159,7 @@
     <Content Include="Views\Werknemer\AndereNaam.cshtml" />
     <Content Include="Views\Home\Palindroom.cshtml" />
     <Content Include="Views\Werknemer\AlleWerknemers.cshtml" />
+    <Content Include="Views\Shared\_AndereLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,4 +1,6 @@
-﻿@using MVC_Voorbeeld2.Models
+﻿@{Layout = "~/Views/Shared/_AndereLayout.cshtml";}
+
+@using MVC_Voorbeeld2.Models
 @model List<Werknemer>
 
 @{
@@ -12,4 +14,5 @@
         <li>@werknemer.Voornaam verdient @werknemer.Wedde</li>
     }
 </ul>
+@section scripts{ <p>Hier komen nog allerlei scripts...</p>}
 
