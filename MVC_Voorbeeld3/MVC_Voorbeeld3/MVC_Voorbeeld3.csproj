@@ -116,6 +116,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Eigenaar.cs" />
     <Compile Include="Models\Filiaal.cs" />
     <Compile Include="Models\HoofdZetel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +130,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\eigendom.png" />
+    <Content Include="Images\gehuurd.png" />
+    <Content Include="Images\ster.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Code\MyHelpers.cshtml" />
@@ -163,6 +167,8 @@
     <Content Include="Views\Filiaal\Index.cshtml" />
     <Content Include="Views\Filiaal\HoofdZetel.cshtml" />
     <Content Include="Views\Filiaal\Filialen.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\sterretjes.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Eigenaar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
