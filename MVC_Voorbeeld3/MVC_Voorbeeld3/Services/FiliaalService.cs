@@ -23,5 +23,13 @@ namespace MVC_Voorbeeld3.Services
         {
             return filialen.Values.ToList();
         }
+        public Filiaal Read(int id)
+        {
+            return filialen[id];
+        }
+        public void Delete(int id)
+        {
+            filialen.Remove(id);
+        }
     }
 }
