@@ -9,7 +9,7 @@
 <ul>
     @foreach(var bier in Model)
     {
-        <li>ID = @bier.ID Naam = @bier.Naam heeft @bier.Alcohol percentage</li>
+        <li> @Html.DisplayFor(m => bier.ID) @bier.Naam @Html.DisplayFor(m => bier.Alcohol) </li>
     }
 </ul>
 
