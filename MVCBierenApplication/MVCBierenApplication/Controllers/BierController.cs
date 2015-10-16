@@ -9,6 +9,7 @@ namespace MVCBierenApplication.Controllers
 {
     public class BierController : Controller
     {
+        private static Dictionary<int, Bier> bierenDictionary = new Dictionary<int, Bier>();
         // GET: Bier
         public ActionResult Index()
         {
@@ -21,5 +22,28 @@ namespace MVCBierenApplication.Controllers
 
             return View(bieren);
         }
+        public ActionResult Verwijderen(int id)
+        {
+            var bier = Read(id);
+
+            return View(bier);
+        }
+        public ActionResult DeleteView(int id)
+        {
+            var bier = Read(id);
+            this.TempData["bier"] = bier;
+            Delete(id);
+            return Redirect("~/Bier/Verwijderd");
+        }
+        public Bier Read(int id)
+        {
+            return bierenDictionary[id];
+        }
+
+        public void Delete(int id)
+        {
+          bierenDictionary.Remove(id);
+        }
+
     }
 }

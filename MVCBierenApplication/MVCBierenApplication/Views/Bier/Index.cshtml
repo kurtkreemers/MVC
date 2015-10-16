@@ -9,7 +9,10 @@
 <ul>
     @foreach(var bier in Model)
     {
-        <li> @Html.DisplayFor(m => bier.ID) @bier.Naam @Html.DisplayFor(m => bier.Alcohol) </li>
+        var url = "Verwijderen/" + bier.ID;
+        <li> @Html.DisplayFor(m => bier.ID) @bier.Naam @Html.DisplayFor(m => bier.Alcohol) <a href="@url"><img src="~/Images/delete.png"/></a></li>
+        <p></p>
+    
     }
 </ul>
 
