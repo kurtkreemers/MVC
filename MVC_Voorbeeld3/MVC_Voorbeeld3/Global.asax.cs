@@ -19,10 +19,15 @@ namespace MVC_Voorbeeld3
             Application.Lock(); 
             Application.Add("aantalBezoeken", 0);
             Application.UnLock();
+            DefaultModelBinder.ResourceClassKey = "Messages";
+            ModelBinders.Binders.Add(typeof(decimal), new DecimalModelBinder()); 
+            ModelBinders.Binders.Add(typeof(decimal?), new DecimalModelBinder());
         }
         protected void Session_Start() 
         { 
             Session["aantalBezoeken"] = 0; 
         }
+
+      
     }
 }
