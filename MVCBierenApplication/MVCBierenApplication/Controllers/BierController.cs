@@ -40,5 +40,24 @@ namespace MVCBierenApplication.Controllers
             var bier = (Bier)TempData["Bier"];
             return View(bier);
         }
+
+        [HttpGet]
+        public ActionResult Toevoegen()
+        {
+            var bier = new Bier();
+            return View(bier);
+        }
+
+        [HttpPost]
+        public ActionResult Toevoegen(Bier b)
+        {
+            if (this.ModelState.IsValid)
+            {
+                Bieren.Add(b);
+                return RedirectToAction("Index");
+            }
+            else
+                return View(b);
+        }
     }
 }

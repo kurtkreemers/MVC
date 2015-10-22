@@ -30,5 +30,11 @@ namespace MVCBierenApplication.Services
         {
             return bierenDictionary.Values.ToList();
         }
+        public void Add(Bier b)
+        {
+            b.ID = bierenDictionary.Keys.Max() + 1;
+            bierenDictionary.Add(b.ID, b);
+        }
     }
+
 }

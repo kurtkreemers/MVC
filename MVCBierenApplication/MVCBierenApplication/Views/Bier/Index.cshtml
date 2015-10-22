@@ -10,9 +10,9 @@
     @foreach(var bier in Model)
     {
         var url = Url.Action("Verwijderen", "Bier", new { ID = bier.ID });    
-        <li> @Html.DisplayFor(m => bier.ID) @bier.Naam @Html.DisplayFor(m => bier.Alcohol) <a href="@url"><img src="~/Images/delete.png" alt="Delete" /></a></li>
-        <p></p>
-    
+        <li> @Html.DisplayFor(m => bier.ID) @bier.Naam @Html.DisplayFor(m => bier.Alcohol) <a href="@url"><img src="~/Images/delete.png" alt="Delete" title="@bier.Naam verwijderen" /></a></li>
+        <p></p>    
     }
 </ul>
+<p>@Html.ActionLink("Bier toevoegen", "Toevoegen")</p>
 
