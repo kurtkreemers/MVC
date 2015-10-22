@@ -45,5 +45,10 @@ namespace MVC_Voorbeeld3.Services
                     orderby persoon.Wedde
                     select persoon).ToList();
         }
+        public void Add(Persoon p)
+        {
+            p.ID = personen.Keys.Max() + 1;
+            personen.Add(p.ID, p);
+        }
     }
 }
