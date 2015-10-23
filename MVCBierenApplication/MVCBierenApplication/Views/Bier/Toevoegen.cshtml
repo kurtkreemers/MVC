@@ -8,9 +8,21 @@
 @using (Html.BeginForm("Toevoegen"))
 {
     @Html.LabelFor(m => m.Naam)
+    @Html.ValidationMessageFor(m => m.Naam)
     @Html.EditorFor(m => m.Naam)
+
+
     @Html.LabelFor(m => m.Alcohol)
+    @Html.ValidationMessageFor(m => m.Alcohol)
     @Html.EditorFor(m => m.Alcohol)
+    
+    @Html.LabelFor(m => m.BrouwerNr)
+    @Html.EditorFor(m => m.BrouwerNr)
+    
+    @Html.LabelFor(m => m.SoortNr)
+    @Html.EditorFor(m => m.SoortNr)
+
+
     <input type="submit" value="toevoegen" />
 }
 
