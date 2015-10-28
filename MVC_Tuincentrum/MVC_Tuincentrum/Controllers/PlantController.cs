@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVC_Tuincentrum.Models;
+using System.IO;
+using MVC_Tuincentrum.Filters;
 
 namespace MVC_Tuincentrum.Controllers
 {
@@ -131,6 +133,23 @@ namespace MVC_Tuincentrum.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [HttpGet]
+        public ViewResult Uploaden(int id)
+        {
+            return View(id);
+        }
+        [HttpPost]
+        public ActionResult FotoUpload(int id)
+        {
+            if(Request.Files.Count > 0)
+            {
+                var foto = Request.Files[0];
+                var absoluutPadNaarDir = this.HttpContext.Server.MapPath("~/Images/Fotos");
+                var absoluutPaNaarFoto = Path.Combine(absoluutPadNaarDir, id + ".jpg");
+                foto.SaveAs(absoluutPaNaarFoto);
+            }
+            return RedirectToAction("Index");
         }
     }
 }

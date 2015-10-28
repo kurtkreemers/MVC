@@ -10,7 +10,8 @@ using MVC_Tuincentrum.Models;
 
 namespace MVC_Tuincentrum.Controllers
 {
-    public class LeveranciersController : Controller
+    
+    public class LeverancierController : Controller
     {
         private TuincentrumEntities db = new TuincentrumEntities();
 
@@ -19,7 +20,7 @@ namespace MVC_Tuincentrum.Controllers
         {
             return View(db.Leveranciers.ToList());
         }
-
+        [OverrideActionFilters]
         // GET: Leveranciers/Details/5
         public ActionResult Details(int? id)
         {
