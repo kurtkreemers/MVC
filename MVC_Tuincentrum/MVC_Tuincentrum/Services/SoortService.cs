@@ -12,11 +12,11 @@ namespace MVC_Tuincentrum.Services
         {
             using (var db = new TuincentrumEntities())
             {
-                var query = from soort in db.Soorten
+                var soorten = (from soort in db.Soorten
                             where soort.Naam.StartsWith(beginNaam)
                             orderby soort.Naam
-                            select soort;
-                var soorten = query.ToList();
+                            select soort).ToList();
+                //var soorten = query.ToList();
                 return soorten;
             }
         }
