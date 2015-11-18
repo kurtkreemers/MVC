@@ -22,3 +22,14 @@ select,
 textarea {
     max-width: 280px;
 }
+table.zebra, table.zebra td, table.zebra.th {
+border: 1px solid silver;
+border-collapse: collapse;
+}
+table.zebra thead {
+color: white;
+background-color: gray;
+}
+table.zebra tbody tr:nth-child(even) {
+background-color: #DDDDDD;
+}
