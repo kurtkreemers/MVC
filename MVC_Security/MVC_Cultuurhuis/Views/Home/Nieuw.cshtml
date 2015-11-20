@@ -16,6 +16,8 @@
     <div class="form-group">
         <div class="col-md-2 control-label">@Html.LabelFor(m => m.Voornaam)</div>
         <div class="col-md-10">
+
+
             @Html.EditorFor(m => m.Voornaam, new { htmlAttributes = new { @class = "form-control", @style = "display:inline-block" } })
             @Html.ValidationMessageFor(m => m.Voornaam, string.Empty, new { @style = "font-style: italic; padding-left:1em" })
         </div>
