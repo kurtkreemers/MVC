@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title  </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div>
+     <h1><img src="~/Images/videoVerhuur.jpg" alt="verhuur" /></h1> </div>
+    <div>
+        <br />
+        <br />
+        <h3>Eerst aanmelden om te kunnen huren !</h3>
+        <br />
+        <h3><a href="@Url.Action("Index", "Home")">Uitloggen en naar beginpagina</a></h3>
+        <br />
+        @RenderBody()
+        <hr />
+        <footer>           
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
