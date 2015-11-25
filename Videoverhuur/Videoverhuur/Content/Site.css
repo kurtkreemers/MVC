@@ -24,4 +24,17 @@ textarea {
     max-width: 280px;
   
 }
+table.zebra, table.zebra td, table.zebra th
+{
+width:auto;
+text-align:center;
+}
+table.zebra tbody tr:nth-child(even) {
+background-color: #DDDDDD;
+}
+td {
+  text-align: center;
+  vertical-align: middle;
+}
+
 

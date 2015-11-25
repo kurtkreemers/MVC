@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Videoverhuur.Models;
 using Videoverhuur.Services;
 
 namespace Videoverhuur.Controllers
 {
     public class HomeController : Controller
     {
+
         private VerhuurService db = new VerhuurService();
         public ActionResult Index()
         {
+            ViewBag.Login = "Eerst aanmelden om te kunnen huren !";
             return View();
         }
 
@@ -37,13 +40,26 @@ namespace Videoverhuur.Controllers
                 var klant = db.GetKlant(naam,postcode);
                 if (klant != null)
                 {
-                    Session["klant"] = klant;
-                    ViewBag.message = "Ga naar verhuringen";
+                    ViewBag.login = "Welkom, " + klant.Voornaam + " " + klant.Naam;
                 }
                 else
-                    ViewBag.Message = "Foutieve gegevens, probeer opnieuw";
+                    ViewBag.login = "Eerst aanmelden om te kunnen verhuren ! ";
+                return View(klant);
             }
             return View();
+           
+        }
+        public ActionResult Genres()
+        {       
+            List<Genre> alleGenres = db.GetAllGenres();       
+            return View(alleGenres);
+        }
+
+        public ActionResult Detail(int id)
+        {
+            List<Film> filmsVanGenre = db.GetAlleFilmsVanGenre(id);
+            ViewBag.Genre = db.GetGenre(id).GenreSoort;
+            return View(filmsVanGenre);
         }
     }
 }
