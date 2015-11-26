@@ -1,0 +1,36 @@
+﻿@model List<Videoverhuur.Models.MandjeItem>
+@{
+    ViewBag.Title = "Afrekenen";
+}
+
+<h2>Afrekenen</h2>
+<table class="zebra">
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Prijs</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="col-md-2" style="text-align:left">@item.Titel</td>
+                <td class="col-md-1">@Html.DisplayFor(m => item.Prijs)</td>
+            </tr>
+        }
+        <tr style="font-weight:bold">
+            <td>Totaal:</td>
+            <td>€&nbsp;@ViewBag.Totaal</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<h3>wordt gefactureerd aan:</h3>
+<br />
+<h3>@ViewBag.KlantNaam</h3>
+<br />
+<h3>@ViewBag.KlantStraat</h3>
+<br />
+<h3>@ViewBag.KlantGemeente</h3>

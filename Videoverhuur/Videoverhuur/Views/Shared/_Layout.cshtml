@@ -9,18 +9,33 @@
 </head>
 <body>
     <div>
-     <h1><img src="~/Images/videoVerhuur.jpg" alt="verhuur" /></h1> </div>
+        <h1><img src="~/Images/videoVerhuur.jpg" alt="verhuur" /></h1>
+    </div>
     <div>
         <br />
         <br />
-        <h3>@ViewBag.Login</h3>
+        @if (Session["Klant"] != null)
+        {
+            var klant = (Videoverhuur.Models.Klant)Session["Klant"];
+            ViewBag.Klant = "Welkom, " + klant.Voornaam + " " + klant.Naam;
+        }
+        else
+        {
+            ViewBag.Klant = "Eerst aanmelden om te kunnen huren ! ";
+        }
+        <h3>@ViewBag.Klant</h3>
         <br />
-        <h3><a href="@Url.Action("Index", "Home")">Uitloggen en naar beginpagina</a></h3>
+        <div>
+            <h3>
+                <a href="@Url.Action("Index", "Home")">Uitloggen en naar beginpagina</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                @if (Session.Count > 1)
+                {<a href="@Url.Action("Afrekenen", "Home")">Afrekenen</a>}
+            </h3>
+        </div>
         <br />
         @RenderBody()
         <hr />
-        <footer>           
-        </footer>
+        <footer></footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")

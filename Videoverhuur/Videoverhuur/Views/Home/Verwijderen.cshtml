@@ -1,0 +1,11 @@
+﻿@model Videoverhuur.Models.Film
+@{
+    ViewBag.Title = "Verwijderen";
+}
+
+<h2>Verwijder gehuurde film</h2>
+<br />
+<h4>Ben je zeker dat je "@Model.Titel" niet wil huren ?</h4>
+<h3><a href="/Home/Verwijdering/@Model.BandNr">Ja</a>   <a href="/Home/Mandje">Nee</a></h3>
+
+

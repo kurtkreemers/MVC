@@ -1,13 +1,12 @@
-﻿@model Videoverhuur.Models.Klant
-@{
+﻿@{
     ViewBag.Title = "Aanmelden";
 }
 
-@if (Model != null)
+@if (Session["Klant"] != null)
 {
-    <h3 bold><a href="/Home/Genres">Ga naar verhuringen</a></h3>
+    <h3 style="font-weight:bold"><a href="/Home/Genres">Ga naar verhuringen</a></h3>
 }
 else
 {
-<h3 bold><a href="/Home/Index">Foutieve gegevens, probeer opnieuw</a></h3>
+    <h3 style="font-weight:bold"><a href="/Home/Index">Foutieve gegevens, probeer opnieuw</a></h3>
 }

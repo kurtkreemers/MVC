@@ -1,0 +1,38 @@
+﻿@model List<Videoverhuur.Models.Film>
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2 bold>@ViewBag.Genre</h2>
+<table class="zebra">
+    <thead>
+        <tr>
+            <th>Titel</th>
+            <th>Prijs</th>
+            <th>In Voorraad</th>
+            <th>Huren</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var film in Model)
+        {
+            <tr>
+                <td class="col-md-2" style="text-align:left" >@film.Titel</td>
+                <td class="col-md-1">@Html.DisplayFor(m => film.Prijs)</td>
+                <td class="col-md-1">@film.InVoorraad</td>
+                @if(film.InVoorraad > 0)
+                {
+                    var urlVerhuur = Url.Action("Verhuren", "Home", new { id = film.BandNr });
+                    <td class="col-md-1"><a href="@urlVerhuur">Huren</a></td>
+                }
+                else
+                { 
+                <td></td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/Home/Genres">Terug naar genre overzicht</a>
+

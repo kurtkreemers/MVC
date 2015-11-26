@@ -126,12 +126,15 @@
     <Compile Include="Models\Film.cs">
       <DependentUpon>VideoVerhuur.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FilmProperties.cs" />
+    <Compile Include="Models\FilmUitgebreid.cs" />
     <Compile Include="Models\Genre.cs">
       <DependentUpon>VideoVerhuur.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Klant.cs">
       <DependentUpon>VideoVerhuur.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MandjeItem.cs" />
     <Compile Include="Models\Verhuur.cs">
       <DependentUpon>VideoVerhuur.tt</DependentUpon>
     </Compile>
@@ -211,6 +214,9 @@
     <Content Include="Views\Home\Aanmelden.cshtml" />
     <Content Include="Views\Home\Genres.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
+    <Content Include="Views\Home\Mandje.cshtml" />
+    <Content Include="Views\Home\Verwijderen.cshtml" />
+    <Content Include="Views\Home\Afrekenen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

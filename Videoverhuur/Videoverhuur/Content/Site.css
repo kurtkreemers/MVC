@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
+    padding-left:10px;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -24,17 +24,25 @@ textarea {
     max-width: 280px;
   
 }
-table.zebra, table.zebra td, table.zebra th
+table.zebra 
+{
+    border: 1px solid silver;
+}
+ table.zebra td, table.zebra th
 {
 width:auto;
 text-align:center;
+
 }
-table.zebra tbody tr:nth-child(even) {
+table.zebra tbody tr:nth-child(odd) {
 background-color: #DDDDDD;
+
 }
 td {
   text-align: center;
   vertical-align: middle;
 }
-
+h2{
+    font-weight:bold;
+}
 

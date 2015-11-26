@@ -1,0 +1,30 @@
+﻿@model List<Videoverhuur.Models.MandjeItem>
+@{
+    ViewBag.Title = "Mandje";
+}
+
+<h2>Winkelmandje</h2>
+
+    <table class="zebra">
+        <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Prijs</th>
+                <th>Verwijderen</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var urlVerwijderen = Url.Action("Verwijderen", "Home", new { id = item.BandNr });
+                <tr>
+                    <td class="col-md-2" style="text-align:left">@item.Titel</td>
+                    <td class="col-md-1">@Html.DisplayFor(m => item.Prijs)</td>
+                    <td class="col-md-1"><a href="@urlVerwijderen">Verwijderen</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <br />
+    <a href="/Home/Genres">Verder winkelen</a>
+
